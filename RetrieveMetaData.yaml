@@ -12,10 +12,10 @@ jobs:
    name: Hosted Windows 2019 with VS2019
   steps:
   - task: PowerShell@2
-    displayName: Checkout_Branch
+    displayName: Check Out Branch
     inputs:
      targetType: 'inline'
-     script: |
+     script: 
       $SourceBranchName = "$(Build.SourceBranch)".Replace('refs/heads/',' ')
       Write-Output "##vso[task.setvariable variable=SourceBranchName]$SourceBranchName"
       git checkout $SourceBranchName
