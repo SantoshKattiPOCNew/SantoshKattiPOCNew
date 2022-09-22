@@ -31,16 +31,3 @@ jobs:
         targets: '$(targetname)'
         PublishJUnitResults: false
         javaHomeoption: 'JDKversion'
-    - task: PowerShell@2
-      displayName: 'Check In Branch'
-      inputs:
-        targetType: 'inline'
-        script:
-      echo "***Starting copying from Salesforce to Repo***"
-       git config --local user.email $(Build.RequestedForEmail)
-       git config --local user.name "$(Build.RequestedFor)"
-       git config --local http.extraheader "AUTHORIZATION:bearer $(System.AccessToken)"
-       git add.
-       git comit -m "${{ parameters.CommitMessage}}"
-       git push origin HEAD:$(SourceBranchName)
-        echo "***All Salesforce Metadata Extract are copied Successfull***"
