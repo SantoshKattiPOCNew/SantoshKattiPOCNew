@@ -15,8 +15,8 @@ jobs:
     displayName: Check Out Branch
     inputs:
      targetType: 'inline'
-     script: |
-      $SourceBranchName = "$(Build.SourceBranch)".Replace('refs/heads/')
+     script: 
+      $SourceBranchName = "$(Build.SourceBranch)".Replace('refs/heads/','')
       Write-Output "##vso[task.setvariable variable=SourceBranchName;isOutput=true]$SourceBranchName"
       git checkout $SourceBranchName
   - task: Ant@1
