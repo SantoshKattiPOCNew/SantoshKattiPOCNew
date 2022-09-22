@@ -2,6 +2,9 @@ parameters:
 - task: PowerShell@2
   inputs:
     filePath: 'C:\Users\Manyam.Konda\Desktop\Azure\RetrieveMetaData.yml'
+- task: PowerShell@2
+  inputs:
+    filePath: 'C:\Users\Manyam.Konda\Desktop\Azure\RetrieveMetaData.yaml'
   - name: SourceSandbox
     displayName: Soure Salesforce Org
     values:
