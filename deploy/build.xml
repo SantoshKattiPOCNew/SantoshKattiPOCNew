@@ -1,1 +1,7 @@
-
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="SantoshKattiPOCNew" default="build" basedir=".">
+<Target name="retrieveUnpackaged">
+<sf:retrieve username="$(sf.username)" password="$(sf.password)" serverurl="$(sf.serverurl)" maxPoll="$(sf.maxPoll)" retrieveTarget="../src" 
+unpackaged="$(sf.unpackaged)"/>
+</Target>
+</project>
