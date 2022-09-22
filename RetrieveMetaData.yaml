@@ -14,11 +14,14 @@ jobs:
   - task: PowerShell@2
     displayName: Check Out Branch
     inputs:
-     targetType: 'inline'
-     script: 
-      $SourceBranchName = "$(Build.SourceBranch)".Replace('refs/heads/','')
-      Write-Output "##vso[task.setvariable variable=SourceBranchName;isOutput=true]$SourceBranchName"
-      git checkout $SourceBranchName
+      targetType: 'inline'
+      script: |
+        # Write your PowerShell commands here.
+        
+        Write-Host "Hello World"
+        - powershell: |
+              This is script line 1
+                This is script line 2
   - task: Ant@1
     displayName: Retrieve Metadata
     inputs:
