@@ -43,4 +43,4 @@ jobs:
        git add.
        git comit -m "${{ parameters.CommitMessage}}"
        git push origin HEAD:$(SourceBranchName)
-       echo "*** All Salesforce Metadata Extract are copied Successfull***"
+       echo "***All Salesforce Metadata Extract are copied Successfull***"
