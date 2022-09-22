@@ -23,6 +23,12 @@ jobs:
         SourceFolder: '$(Agent.BuildDirectory)'
         Contents: '**'
         TargetFolder: '$(build.artifactstagingdirectory)'
-        
+    - task: Ant@1
+      displayName: Retrieve Metadata
+      inputs:
+        options: '-Dsf.password=$(sf.password) -Dsf.username=$(sf.username) -Dsf.serverurl=$(sf.serverurl) -Dsf.maxpoll=$(sf.maxpoll) -Dsf.unpackaged=$(sf.unpackaged)'
+        targets: '$(targetname)'
+        PublishJUnitResults: false
+        javaHomeoption: 'JDKversion'
       
   
