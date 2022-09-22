@@ -1,15 +1,9 @@
 parameters:
-- task: PowerShell@2
-  inputs:
-    filePath: 'C:\Users\Manyam.Konda\Desktop\Azure\RetrieveMetaData.yml'
-- task: PowerShell@2
-  inputs:
-    filePath: 'C:\Users\Manyam.Konda\Desktop\Azure\RetrieveMetaData.yaml'
   - name: SourceSandbox
     displayName: Soure Salesforce Org
     values:
-    - abhilash.gottikadev
-    - abhilash.gottikaqa1
+    - abhilash.gottikadevorg
+    - abhilash.gottikaqaorg
   - name: commitMessage
     displayName: Enter Commit Message
 jobs:
@@ -18,21 +12,13 @@ jobs:
    name: Hosted Windows 2019 with VS2019
   steps:
   - task: PowerShell@2
-    displayName: Check Out Branch
+    displayName: Checkout_Branch
     inputs:
-      targetType: 'inline'
-      script: |
-        # Write your PowerShell commands here.
-        
-        Write-Host "Hello World"
-          - task: PowerShell@2
-            displayName: Check Out Branch
-            inputs:
-             targetType: 'inline'
-             script: 
-              $SourceBranchName = "$(Build.SourceBranch)".Replace('refs/heads/','')
-              Write-Output "##vso[task.setvariable variable=SourceBranchName;isOutput=true]$SourceBranchName"
-              git checkout $SourceBranchName
+     targetType: 'inline'
+     script: |
+      $SourceBranchName = "$(Build.SourceBranch)".Replace('refs/heads/',' ')
+      Write-Output "##vso[task.setvariable variable=SourceBranchName;isOutput=true]$SourceBranchName"
+      git checkout $SourceBranchName
   - task: Ant@1
     displayName: Retrieve Metadata
     inputs:
