@@ -39,7 +39,7 @@ jobs:
     - task: PublishBuildArtifacts@1
       displayName: Publish MetaData
       inputs:
-        PathtoPublish: 'https://github.com/SantoshKattiPOCNew/SantoshKattiPOCNew/tree/main/src'
+        PathtoPublish: '$(build.artifactstagingdirectory)'
         ArtifactName: 'drop'
         publishLocation: 'Container'  
       
