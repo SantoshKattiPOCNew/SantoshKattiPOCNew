@@ -12,11 +12,13 @@
     <condition property="sf.sessionId" value=""> <not> <isset property="sf.sessionId"/> </not> </condition>
  -->
     <property name = "ant.jar" value = "ant-salesforce.jar/>
-  <!--  <property name = "sf.username" value = "${sf.username}"/>
+  
+   <!--  <property name = "sf.username" value = "${sf.username}"/>
     <property name = "sf.password" value = "${sf.password}"/>
     <property name = "sf.serverurl" value = "${sf.serverurl}"/>
     <property name = "sf.testlevel" value = "${sf.testlevel}"/>
-    <property name = "sf.unpackaged" value = "${sf.unpackaged}"/>							      -->
+    <property name = "sf.unpackaged" value = "${sf.unpackaged}"/>							      
+  -->
                                                                
     <taskdef resource="com/salesforce/antlib.xml" uri="antlib:com.salesforce">
         <classpath>
