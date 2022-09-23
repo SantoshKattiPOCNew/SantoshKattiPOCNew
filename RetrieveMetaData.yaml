@@ -23,6 +23,11 @@ jobs:
         SourceFolder: '$(Agent.BuildDirectory)'
         Contents: '**'
         TargetFolder: '$(build.artifactstagingdirectory)'
+    - task: JavaToolInstaller@0
+      inputs:
+        versionSpec: '8'
+        jdkArchitectureOption: 'x86'
+        jdkSourceOption: 'PreInstalled'
     - task: Ant@1
       displayName: Retrieve Metadata
       inputs:
