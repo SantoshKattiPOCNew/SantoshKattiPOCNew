@@ -18,11 +18,6 @@ jobs:
    name: Hosted Windows 2019 with VS2019
   steps:
     - checkout: SantoshKattiPOCNew
-    - task: CopyFiles@2
-      inputs:
-        SourceFolder: '$(Agent.BuildDirectory)'
-        Contents: '**'
-        TargetFolder: '$(build.artifactstagingdirectory)'
     - task: JavaToolInstaller@0
       inputs:
         versionSpec: '11'
@@ -35,12 +30,17 @@ jobs:
         options: '-Dsf.password=$(sf.password) -Dsf.username=$(sf.username) -Dsf.serverurl=$(sf.serverurl) -Dsf.maxpoll=$(sf.maxpoll) -Dsf.unpackaged=$(sf.unpackaged)'
         targets: '$(targetname)'
         PublishJUnitResults: false
-        javaHomeoption: 'JDKVersion'      
-    - task: PublishBuildArtifacts@1
-      displayName: Publish MetaData
+        javaHomeoption: 'JDKVersion'     
+    - task: PowerShell@2
+      displayName: 'Check In Branch'
       inputs:
-        PathtoPublish: '$(build.artifactstagingdirectory)'
-        ArtifactName: 'drop'
-        publishLocation: 'Container'  
-      
-  
+       targetType: 'inline'
+       script:
+        echo "***Starting copying from Salesforce to Repo***"
+        git config --local user.email $(Build.RequestedForEmail)
+        git config --local user.name "$(Build.RequestedFor)"
+        git add.
+        git comit -m "${{ parameters.CommitMessage}}"
+        git push origin HEAD:SantoshKattiPOCNew
+        echo "*** All Salesforce Metadata Extract are copied Successfull***"
+    
