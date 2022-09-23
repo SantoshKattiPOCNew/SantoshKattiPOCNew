@@ -4,17 +4,10 @@
     <property environment="env"/>
 
     <property name = "ant.jar" value = "ant-salesforce.jar"/>  
-    &lt;taskdef resource=&quot;com/salesforce/antlib.xml&quot; uri=&quot;antlib:com.salesforce&quot;&gt;
-        &lt;classpath&gt;
-            &lt;pathelement location=&quot;../ant-salesforce.jar&quot; /&gt;        
-	  &lt;/classpath&gt;
-   &lt;/taskdef&gt;
+  
 
-    &lt;!-- Retrieve an unpackaged set of metadata from your org --&gt;
-    &lt;!-- The file unpackaged/package.xml lists what is to be retrieved --&gt;
     &lt;target name=&quot;retrieveUnpackaged&quot;&gt;
       &lt;mkdir dir=&quot;retrieveUnpackaged&quot;/&gt;
-      &lt;;!-- Retrieve the contents into another directory --&gt;
       &lt;sf:retrieve username=&quot;${sf.username}&quot; password=&quot;${sf.password}&quot; serverurl=&quot;${sf.serverurl}&quot; maxPoll=&quot;${sf.maxPoll}&quot; retrieveTarget=&quot;../src&quot; unpackaged=&quot;${sf.unpackaged}&quot;/&gt;
     &lt;/target&gt;
 
