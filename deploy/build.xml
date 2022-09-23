@@ -1,4 +1,4 @@
-<project name="SantoshKattiPOCNew" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
+<project name="SantoshKattiPOCNew" default="build" basedir="." xmlns:sf="antlib:com.salesforce">
 
     <property file="build.properties"/>
     <property environment="env"/>
