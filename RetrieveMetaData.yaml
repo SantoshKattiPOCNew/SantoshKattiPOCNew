@@ -31,5 +31,6 @@ jobs:
         targets: '$(targetname)'
         PublishJUnitResults: false
         javaHomeoption: 'JDKversion'
+        jdkVersionOption: 'default'
       
   
