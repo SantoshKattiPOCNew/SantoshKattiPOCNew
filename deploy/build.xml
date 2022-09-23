@@ -5,6 +5,11 @@
 
     <property name = "ant.jar" value = "ant-salesforce.jar"/>  
   
+ <taskdef resource="com/salesforce/antlib.xml" uri="antlib:com.salesforce">
+        <classpath>
+            <pathelement location="../ant-salesforce.jar" />        
+	  </classpath>
+   </taskdef>
 
     <target name="retrieveUnpackaged">
       <mkdir dir="retrieveUnpackaged"/>
