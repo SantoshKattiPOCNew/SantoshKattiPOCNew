@@ -1,4 +1,4 @@
-<project name="SantoshKattiPOCNew" default="test" basedir=".">
+<project name="SantoshKattiPOCNew" default="build" basedir=".">
 
     <property file="build.properties"/>
     <property environment="env"/>
