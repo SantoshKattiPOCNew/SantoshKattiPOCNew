@@ -1,4 +1,4 @@
-<project name="SantoshKattiPOCNew" default="build" basedir=".">
+<project name="SantoshKattiPOCNew" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
 
     <property file="build.properties"/>
     <property environment="env"/>
@@ -6,9 +6,9 @@
     <property name = "ant.jar" value = "ant-salesforce.jar"/>  
   
 
-    &lt;target name=&quot;retrieveUnpackaged&quot;&gt;
-      &lt;mkdir dir=&quot;retrieveUnpackaged&quot;/&gt;
-      &lt;sf:retrieve username=&quot;${sf.username}&quot; password=&quot;${sf.password}&quot; serverurl=&quot;${sf.serverurl}&quot; maxPoll=&quot;${sf.maxPoll}&quot; retrieveTarget=&quot;../src&quot; unpackaged=&quot;${sf.unpackaged}&quot;/&gt;
-    &lt;/target&gt;
+    <target name="retrieveUnpackaged">
+      <mkdir dir="retrieveUnpackaged"/>
+      <sf:retrieve username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="../src" unpackaged="${sf.unpackaged}"/>
+    </target>
 
 </project>
