@@ -19,6 +19,11 @@ jobs:
    name: Hosted Windows 2019 with VS2019
   steps:
     - checkout: SantoshKattiPOCNew
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(Agent.BuildDirectory)'
+        Contents: '**'
+        TargetFolder: '$(build.artifactstagingdirectory)'
     - task: JavaToolInstaller@0
       inputs:
         versionSpec: '11'
@@ -32,6 +37,12 @@ jobs:
         targets: '$(targetname)'
         PublishJUnitResults: false
         javaHomeoption: 'JDKVersion'     
+    - task: PublishBuildArtifacts@1
+      displayName: Publish MetaData
+      inputs:
+        PathtoPublish: '$(build.artifactstagingdirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'  
     - task: PowerShell@2
       displayName: 'Check In Branch'
       inputs:
