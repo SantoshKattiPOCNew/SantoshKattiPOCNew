@@ -1,4 +1,4 @@
-<project name="SantoshKattiPOCNew" default="retrieveUnpackaged" basedir="../" xmlns:sf="antlib:com.salesforce">
+<project name="SantoshKattiPOCNew" default="retrieveUnpackaged" xmlns:sf="antlib:com.salesforce">
 
     <property file="build.properties"/>
     
