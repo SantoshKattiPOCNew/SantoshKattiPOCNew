@@ -3,6 +3,7 @@
 	<types>
 		<members>testing</members>
 		<members>testing2</members>
+		<members>SFDCDemoTest</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
