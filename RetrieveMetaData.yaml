@@ -34,7 +34,7 @@ jobs:
       inputs:
         buildFile: 'deploy\build.xml'
         options: '-Dsf.password=$(sf.password) -Dsf.username=$(sf.username) -Dsf.serverurl=$(sf.serverurl) -Dsf.maxpoll=$(sf.maxpoll) -Dsf.unpackaged=$(sf.unpackaged)'
-        targets: 'src\retrieveUnpackagedNew'
+        targets: 'src'
         PublishJUnitResults: false
         javaHomeoption: 'JDKVersion'     
     - task: PublishBuildArtifacts@1
