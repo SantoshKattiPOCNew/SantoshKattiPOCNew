@@ -12,6 +12,7 @@ resources:
      type: github
      endpoint: GitHubConnection-Santosh
      name:  SantoshKattiPOCNew/SantoshKattiPOCNew
+     ref: main
 jobs:
 - job: Run_Package
   pool:
