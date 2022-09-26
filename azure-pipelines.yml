@@ -13,7 +13,7 @@ steps:
 - task: Ant@1
   inputs:
     workingDirectory: 'src'
-    buildFile: 'build.xml'
+    buildFile: 'deploy/build.xml'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
