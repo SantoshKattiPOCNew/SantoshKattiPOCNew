@@ -36,7 +36,7 @@ jobs:
         buildFile: 'deploy\build.xml'
         options: '-Dsf.password=$(sf.password) -Dsf.username=$(sf.username) -Dsf.serverurl=$(sf.serverurl) -Dsf.maxpoll=$(sf.maxpoll) -Dsf.unpackaged=$(sf.unpackaged)'
         PublishJUnitResults: false
-        testResultsFiles: '**/Test-*.xml'
+        testResultsFiles: '**/Test-*.text'
         javaHomeoption: 'JDKVersion'     
     - task: PublishBuildArtifacts@1
       displayName: Publish MetaData
